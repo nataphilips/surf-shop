@@ -1,6 +1,6 @@
 import React from "react";
 import background from "./pics/background-single-2.jpg";
-import sand from "./pics/beach-sand.jpg";
+import story from "./pics/girl-surf-2.jpg";
 import bodyboard from "./pics/man-bodyboard.jpg";
 import surfing from "./pics/surfboards-2.jpg";
 import yoga from "./pics/girl-yoga.jpg";
@@ -8,6 +8,15 @@ import "./App.css";
 import styled from "styled-components";
 
 function App() {
+  // const [isVisible, setVisible] = React.useState(false);
+  // const domRef = React.useRef();
+  // React.useEffect(() => {
+  //   const observer = new IntersectionObserver(entries => {
+  //     entries.forEach(entry => setVisible(entry.isIntersecting));
+  //   });
+  //   // observer.observe(domRef.current);
+  // }, []);
+
   return (
     <div className="App">
       <Intro>
@@ -15,6 +24,18 @@ function App() {
         <SmallText>Your soulmates in Sri Lanka</SmallText>
         <Button>EXPLORE</Button>
       </Intro>
+      <OurStory>
+        <SmallHeader teal={true}>Our story</SmallHeader>
+        <SmallTextWide teal={true}>
+          Nunc sed augue lacus viverra vitae congue eu consequat ac. Sapien eget
+          mi proin sed libero. Enim praesent elementum facilisis leo vel. A cras
+          semper auctor neque vitae tempus quam. Felis donec et odio
+          pellentesque diam volutpat commodo. Dictum sit amet justo donec enim
+          diam. Facilisis leo vel fringilla est ullamcorper. Sollicitudin
+          aliquam ultrices sagittis orci a scelerisque purus semper. Dapibus
+          ultrices in iaculis nunc sed augue lacus viverra.
+        </SmallTextWide>
+      </OurStory>
       <Shop>
         <SmallHeader teal={true}>
           We sell the best surfing gear <br /> since 1994
@@ -157,5 +178,34 @@ const ShopPic = styled.img`
   background-position: center;
   object-fit: cover;
 `;
+
+const OurStory = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-image: url("${story}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+`;
+
+// const FadeInText = styled.div`
+//   opacity: 0;
+//   transform: translateY(20vh);
+//   visibility: hidden;
+//   transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+//   will-change: opacity, visibility;
+//   ${props =>
+//     props.isvisible &&
+//     `
+//     opacity: 1;
+//   transform: none;
+//   visibility: visible;
+//   `}
+// `;
 
 export default App;
