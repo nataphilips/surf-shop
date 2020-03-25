@@ -142,11 +142,18 @@ function App() {
         </ShopContainer>
         <Button>More</Button>
       </Shop>
-      <Otbivka />
+
+      <Otbivka2 />
       <Footer>
         <FooterImg />
         <Contact>
           <SmallHeader teal={true}>Contact</SmallHeader>
+          <TinyHeader teal={true}>Phone</TinyHeader>
+          <SmallText teal={true}>+0 111 222 33 44</SmallText>
+          <TinyHeader teal={true}>Email</TinyHeader>
+          <SmallText teal={true}>surfschool@example.com</SmallText>
+          <TinyHeader teal={true}>Address</TinyHeader>
+          <SmallText teal={true}>0002233, Sri Lanka, Midigama</SmallText>
         </Contact>
       </Footer>
     </div>
@@ -171,11 +178,12 @@ const Header = styled.h1`
   margin: 10px;
   color: white;
   font-size: 42px;
+  font-family: "Oswald", sans-serif;
 `;
 
 const SmallText = styled.div`
   margin: 0px;
-  color: ${props => (props.teal ? "teal" : "white")};
+  color: ${props => (props.teal ? "#3B7C78" : "white")};
   font-size: 18px;
   margin: 10px;
   max-width: 30%;
@@ -183,20 +191,28 @@ const SmallText = styled.div`
 
 const SmallTextWide = styled.div`
   margin: 0px;
-  color: ${props => (props.teal ? "teal" : "white")};
+  color: ${props => (props.teal ? "#3B7C78" : "white")};
   font-size: 18px;
   margin: 10px;
   max-width: 70%;
 `;
 
 const Button = styled.button`
-  background-color: grey;
+  background-color: #a9aca9;
   color: white;
   border: none;
   padding: 15px;
-  font-size: 16px;
+  font-size: 20px;
   margin: 10px;
   text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  border-radius: 5px;
+
+  &: hover {
+    box-shadow: 0px 0px 10px 3px #70798c;
+    transition: ease-out 0.2s;
+  }
 `;
 
 const Shop = styled.div`
@@ -214,10 +230,11 @@ const Shop = styled.div`
 
 const SmallHeader = styled.h3`
   margin: 10px;
-  color: ${props => (props.teal ? "teal" : "white")};
+  color: ${props => (props.teal ? "#3B7C78" : "white")};
   font-size: 28px;
   text-transform: uppercase;
   max-width: 30%;
+  font-family: "Oswald", sans-serif;
 `;
 
 const ShopContainer = styled.div`
@@ -241,7 +258,7 @@ const ShopCard = styled.div`
 
 const TinyHeader = styled.h3`
   margin: 10px;
-  color: ${props => (props.teal ? "teal" : "white")};
+  color: ${props => (props.teal ? "#3B7C78" : "white")};
   font-size: 20px;
   text-transform: uppercase;
   margin: 20px;
@@ -285,6 +302,7 @@ const HalfSticky = styled.div`
 
 const Otbivka = styled.div`
   height: 10vh;
+  background-color: white;
   background-image: url("${olive}");
   background-repeat: no-repeat;
   background-position: center;
@@ -294,11 +312,11 @@ const Otbivka = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 `;
 const Otbivka2 = styled.div`
   height: 50vh;
-  background-color: white;
+  /* background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -307,12 +325,13 @@ const Otbivka2 = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-left: 50%;
+  padding-left: 50%; */
 `;
 
 const SurfSchool = styled.div`
   height: 50vh;
   width: 100%;
+  padding-top: 50px;
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
@@ -343,12 +362,17 @@ const SurfSchoolImg = styled.img`
 
 const Footer = styled.div`
   height: 50vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
+  position: fixed;
+  z-index: -1;
   flex-direction: row;
   align-items: center;
   justify-content: center;
